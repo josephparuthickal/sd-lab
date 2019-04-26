@@ -1,0 +1,63 @@
+student@T23:~$ mkdir jose
+student@T23:~$ cd jose
+student@T23:~/jose$ git clone https://github.com/josephparuthickal/joseph.git
+Cloning into 'joseph'...
+Username for 'https://github.com': josephparuthickal
+Password for 'https://josephparuthickal@github.com': 
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 10 (delta 3), reused 4 (delta 0), pack-reused 0
+Unpacking objects: 100% (10/10), done.
+student@T23:~/jose$ git checkout -b feature_x
+fatal: not a git repository (or any of the parent directories): .git
+student@T23:~/jose$ git branch feature_x
+fatal: not a git repository (or any of the parent directories): .git
+student@T23:~/jose$ cd joseph
+student@T23:~/jose/joseph$ git branch feature_x
+student@T23:~/jose/joseph$ git checkout feature_x
+Switched to branch 'feature_x'
+student@T23:~/jose/joseph$ git commit -m "this is a commit"
+On branch feature_x
+nothing to commit, working tree clean
+student@T23:~/jose/joseph$ git push origin feature_x
+Username for 'https://github.com': josephparuthickal
+Password for 'https://josephparuthickal@github.com': 
+Total 0 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'feature_x' on GitHub by visiting:
+remote:      https://github.com/josephparuthickal/joseph/pull/new/feature_x
+remote: 
+To https://github.com/josephparuthickal/joseph.git
+ * [new branch]      feature_x -> feature_x
+student@T23:~/jose/joseph$ git fetch origin master
+Username for 'https://github.com': josephparuthickal
+Password for 'https://josephparuthickal@github.com': 
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/josephparuthickal/joseph
+ * branch            master     -> FETCH_HEAD
+   00d1c4d..5b5a90c  master     -> origin/master
+student@T23:~/jose/joseph$ git diff
+student@T23:~/jose/joseph$ git diff origin master
+diff --git a/sample.c.txt b/sample.c.txt
+index 9a0676c..7127fc6 100644
+--- a/sample.c.txt
++++ b/sample.c.txt
+@@ -1,6 +1,6 @@
+ #include <stdio.h>
+ int main()
+ {
+-   printf("Hello World ");
++   printf("Hello World  hai");
+    return 0;
+ }
+student@T23:~/jose/joseph$ git merge origin master
+Updating 00d1c4d..5b5a90c
+Fast-forward
+ sample.c.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
